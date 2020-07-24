@@ -22,6 +22,14 @@ TimeoutStopSec=5
 [Install]
 WantedBy=default.target
 
+If you are are using a plugin check config on = vim /etc/default/shadowsocks2 
+
+OPTIONS=-s 'ss://AEAD_CHACHA20_POLY1305:Gosixee7@:80' \
+        -verbose \
+        -plugin /usr/local/bin/httpierce \
+        -plugin-opts server
+
+
 ===============================
 then use this commands 
 systemctl daemon-reload
