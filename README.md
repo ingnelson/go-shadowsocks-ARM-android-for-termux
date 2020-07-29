@@ -6,9 +6,10 @@ https://github.com/shadowsocks/go-shadowsocks2
 * httpierce and shadowsocks2 binaries should be at /usr/local/bin
 
 *First check that go-shadowsocks2 is install in your VPS 
+
 *cd /etc/systemd/system/shadowsocks2.service
 
-should be inside somthing like this :
+inside shadowsocks2.service file should be something like this :
 
 [Unit]
 Description=Next-generation Shadowsocks in Go
