@@ -52,10 +52,19 @@ Run shadowsocks2 on server:
 shadowsocks2 -s 'ss://AEAD_CHACHA20_POLY1305:Gosixee7@:8000' -verbose -plugin httpierce -plugin-opts "server"
 ```
 *example How to run go-shadowsocks on Termux:
-First download the file with the command = wget
-then = chmod +x shadowsocks2
-run shadowsocks2 with the command = ./shadowsocks2 -c 'ss://AEAD_CHACHA20_POLY1305:Gosixee7@your-vps-ip:80' -socks :1080 -verbose -plugin ./httpierce &>> ss.log &
-test the connection = curl -x socks5h://127.0.0.1:1080 http://httpbin.org/ip
-
+First download the file with the command = wget -co address-file
+then = 
+```
+chmod +x shadowsocks2
+```
+run shadowsocks2 with the command = 
+```
+./shadowsocks2 -c 'ss://AEAD_CHACHA20_POLY1305:Gosixee7@your-vps-ip:80' -socks :1080 -verbose -plugin ./httpierce &>> ss.log
+```
+&
+test the connection = 
+```
+curl -x socks5h://127.0.0.1:1080 http://httpbin.org/ip
+```
 
 
