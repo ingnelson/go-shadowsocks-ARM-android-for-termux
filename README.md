@@ -7,10 +7,11 @@ https://github.com/shadowsocks/go-shadowsocks2
 
 *First check that go-shadowsocks2 is install in your VPS 
 
-*cd /etc/systemd/system/shadowsocks2.service
+*vim /etc/systemd/system/shadowsocks2.service
 
 inside shadowsocks2.service file should be something like this :
 
+```
 [Unit]
 Description=Next-generation Shadowsocks in Go
 
@@ -24,27 +25,32 @@ TimeoutStopSec=5
 
 [Install]
 WantedBy=default.target
+```
+If you are are using a plugin check config on = 
+```
+vim /etc/default/shadowsocks2 
+```
 
-If you are are using a plugin check config on = vim /etc/default/shadowsocks2 
 
+```
 OPTIONS=-s 'ss://AEAD_CHACHA20_POLY1305:Gosixee7@:80' \
         -verbose \
         -plugin /usr/local/bin/httpierce \
         -plugin-opts server
-
+```
 
 ===============================
 
 then use this commands: 
-
+```
 systemctl daemon-reload
 systemctl start shadowsocks2.service
 systemctl status shadowsocks2
-
+```
 Run shadowsocks2 on server:
-
+```
 shadowsocks2 -s 'ss://AEAD_CHACHA20_POLY1305:Gosixee7@:8000' -verbose -plugin httpierce -plugin-opts "server"
-
+```
 *example How to run go-shadowsocks on Termux:
 First download the file with the command = wget
 then = chmod +x shadowsocks2
